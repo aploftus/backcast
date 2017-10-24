@@ -1,9 +1,6 @@
 var VideoListEntryView = Backbone.View.extend({
-
-  // el: '.video-list',
-  
+ 
   initialize: function() {
-    // this.listenTo(this.model, 'click', this.model.incrementPlayCount);
   },
   
   events: {
