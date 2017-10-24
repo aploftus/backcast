@@ -1,5 +1,8 @@
 var Video = Backbone.Model.extend({
   
+  defaults: {
+    playCount: 0
+  },
 
   initialize: function(video) {
     // override youtube's complex id field
@@ -11,6 +14,11 @@ var Video = Backbone.Model.extend({
 
   select: function() {
     this.trigger('select', this);
+  },
+  
+  incrementPlayCount: function() {
+    this.playCount += 1;
+    console.log('I counted!');
   }
 
 });

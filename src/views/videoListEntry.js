@@ -2,9 +2,17 @@ var VideoListEntryView = Backbone.View.extend({
 
   // el: '.video-list',
   
-  // initialize: function() {
-  //   // this.render();
-  // },
+  initialize: function() {
+    // this.listenTo(this.model, 'click', this.model.incrementPlayCount);
+  },
+  
+  events: {
+    'click': 'handleClick'
+  },
+
+  handleClick: function() {
+    this.model.incrementPlayCount();
+  },
 
   render: function() {
     // this.$el.children().detach();
