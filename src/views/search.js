@@ -5,17 +5,13 @@ var SearchView = Backbone.View.extend({
     'keyup input': 'handleKeyup'
   },
 
-  initialize: function() {
-    this.render();
-  },
-
   render: function() {
     this.$el.html(this.template());
     return this;
   },
 
   handleKeyup: function(e) {
-    if (e.keycode === 13) {
+    if (e.keyCode === 13) {
       this.performSearch();
     }
   },

@@ -5,6 +5,7 @@ var Videos = Backbone.Collection.extend({
   url: 'https://www.googleapis.com/youtube/v3/search',
   
   search: function(query) {
+    console.log('i searched');
     this.fetch({
       data: {
         q: query,
@@ -13,13 +14,11 @@ var Videos = Backbone.Collection.extend({
         type: 'video',
         videoEmbeddable: 'true',
         part: 'snippet'
-      },
-      success: function(data) {
-        console.log('we fetched!' + data);
-      },
-      failure: function() {
-        console.log('sorry, we were unable to fetch');
       }
     });
+  },
+  
+  parse: function(data, options) {
+    return data.items;
   }
 });
