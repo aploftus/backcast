@@ -5,7 +5,6 @@ var Videos = Backbone.Collection.extend({
   url: 'https://www.googleapis.com/youtube/v3/search',
   
   search: function(query) {
-    console.log('i searched');
     this.fetch({
       data: {
         q: query,
